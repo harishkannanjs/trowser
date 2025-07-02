@@ -16,7 +16,7 @@ const faqs = [
   },
   {
     trigger: "How does the AI in Miraweb help me?",
-    content: "Miraweb&apos;s AI simplifies tasks—like finding information or organizing tabs—by learning your habits and anticipating what you need."
+    content: "Miraweb's AI simplifies tasks—like finding information or organizing tabs—by learning your habits and anticipating what you need."
   },
   {
     trigger: "Is Miraweb good for gaming or streaming?",
