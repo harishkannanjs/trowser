@@ -34,7 +34,7 @@ function FAQs() {
       <div className='max-w-7xl mx-auto'>
         <div className='text-center mb-12'>
           <h1 className='md:text-6xl text-3xl font-sans font-semibold tracking-tight'>Why Miraweb?</h1>
-          <p className='text-lg text-neutral-300 mt-4'>Your data isn't for sale — it's your kingdom. Miraweb keeps it that way.</p>
+          <p className='text-lg text-neutral-300 mt-4'>Your data isn&apos;t for sale — it&apos;s your kingdom. Miraweb keeps it that way.</p>
         </div>
         
         <div className='flex justify-center'>
