@@ -36,7 +36,6 @@ function Features() {
             key={i}
             title={item.title}
             description={item.description}
-            image={item.image}
             className={item.className}
             upcoming={item?.upcoming}
           />
