@@ -62,7 +62,7 @@ const Reviews = () => {
     <section id='testimonials'className='md:mt-44 md:mb-24 my-16 md:mx-20 mx-8 flex flex-col md:flex-row md:gap-24 gap-8'>
       <div className='text-nowrap'>
         <h1 className='md:text-6xl text-3xl font-sans font-semibold tracking-tight text-wrap max-md:text-center max-w-sm'>Hear from our Users</h1>
-        <p className='my-4 text-gray-300 text-wrap max-md:text-center'>See how Miraweb is changing the way how people use their browsing.</p>
+        <p className='my-4 text-gray-300 text-wrap max-md:text-center'>See how Miraweb is changing the way how people use their browsingSee how Miraweb is changing the way people browse the web.See how Miraweb is changing the way people browse the web.</p>
         <div className='hidden md:flex gap-4 ml-4 mt-8'>
           <div onClick={decOffset} className='border-white/[0.2] rounded-lg p-1 border cursor-pointer'><ChevronLeft /></div>
           <div onClick={incOffset} className='border-white/[0.2] rounded-lg p-1 border cursor-pointer'><ChevronRight /></div>
