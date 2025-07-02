@@ -10,28 +10,28 @@ type Review = {
 
 const reviews: Review[] = [
   {
-    content: "FinTrack helps me stay on top of my budget every week.",
-    user: "Beta User, FinTrack"
+    content: "I switched to Miraweb after realizing how much of my family's data was being harvested. Now I can browse without feeling like someone's peeking over my shoulder. Finally, peace of mind!",
+    user: "Sarah K., Freelance Writer"
   },
   {
-    content: "Exactly the kind of finance tool I wish I had during college — clean, simple, and focused.",
-    user: "Prospective User Feedback"
+    content: "Ads were ruining my workflow—constant interruptions when researching samples. Miraweb blocks them all by default. It’s like someone finally hit mute on the internet.",
+    user: "Javier M., Music Producer"
   },
   {
-    content: "Can't wait to use this with my monthly goals — the UI looks 🔥.",
-    user: "Design Mock Feedback"
+    content: "Slow browsers + sketchy hotel Wi-Fi = nightmare. Miraweb loads pages instantly, even on weak connections. Now I can actually get work done from the beach.",
+    user: "Priya T., Digital Nomad"
   },
   {
-    content: "Still in early stages, but already looks like something I'd use daily.",
-    user: "Test Feedback, Student Finance Club"
+    content: "My MacBook used to die in 3 hours. Switched to Miraweb and now I survive back-to-back lectures without hunting for outlets. Lifesaver!  .",
+    user: "Marcus L., College Senior"
   },
   {
-    content: "If this can help me stop overspending on coffee, I'm in.",
-    user: "Early Access Interest"
+    content: "I literally have 70+ tabs open right now, and my laptop isn’t screaming in protest. Miraweb handles my chaos like a champ. Where has this been all my life?",
+    user: "Nina R., Marketing Director"
   },
   {
-    content: "FinTrack helps me stay on top of my budget every week.",
-    user: "Beta User, FinTrack"
+    content: "Most browsers feel like a cluttered toolbox. Miraweb is clean, intuitive, and just… pleasant. It’s the Apple of browsers—minimal but powerful.",
+    user: "Oliver W., UI/UX Designer"
   },
 ]
 
@@ -62,7 +62,7 @@ const Reviews = () => {
     <section id='testimonials'className='md:mt-44 md:mb-24 my-16 md:mx-20 mx-8 flex flex-col md:flex-row md:gap-24 gap-8'>
       <div className='text-nowrap'>
         <h1 className='md:text-6xl text-3xl font-sans font-semibold tracking-tight text-wrap max-md:text-center max-w-sm'>Hear from our Users</h1>
-        <p className='my-4 text-gray-300 text-wrap max-md:text-center'>See how FinTrack is changing the way how people manage their finances.</p>
+        <p className='my-4 text-gray-300 text-wrap max-md:text-center'>See how Miraweb is changing the way how people use their browsing.</p>
         <div className='hidden md:flex gap-4 ml-4 mt-8'>
           <div onClick={decOffset} className='border-white/[0.2] rounded-lg p-1 border cursor-pointer'><ChevronLeft /></div>
           <div onClick={incOffset} className='border-white/[0.2] rounded-lg p-1 border cursor-pointer'><ChevronRight /></div>
