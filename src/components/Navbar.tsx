@@ -83,7 +83,7 @@ const Navbar = () => {
       >
         <div className='flex items-center gap-16 text-neutral-400'>
           <div className='flex items-center'>
-            <div className='h-24 w-24 rounded-full'>
+            <div className='h-330 px w-1581 px rounded-full'>
               <Image
                 src={'/Trowser_Logo.webp'}
                 height={96}
