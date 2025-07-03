@@ -3,8 +3,8 @@ import "./globals.css";
 import { Toaster } from "@/components/ui/sonner";
 
 export const metadata: Metadata = {
-  title: "Miraweb",
-  description: "Rewriting the rules of browsing",
+  title: "Trowser",
+  description: "The next-generation browser engineered for speed, privacy, and precision — without the clutter.",
 };
 
 export default function RootLayout({
