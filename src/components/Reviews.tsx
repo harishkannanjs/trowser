@@ -19,11 +19,11 @@ const reviews: Review[] = [
   },
   {
     content: "We didn’t want to build just another browser. We wanted to build less — so you could do more.",
-    user: "Krishna Prasath R., Lead Systems Architect"
+    user: "Krishna Prasath .R, Lead Systems Architect"
   },
   {
     content: "Trowser is designed like an instrument, not a product — simple, precise, and ready to get out of your way.",
-    user: "Harish Kannan J.S., UX Engineer"
+    user: "Harish Kannan .J.S, UX Engineer"
   },
 ]
 
