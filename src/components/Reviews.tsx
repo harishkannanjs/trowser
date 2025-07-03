@@ -15,7 +15,7 @@ const reviews: Review[] = [
   },
   {
     content: "Our beta testers told us it feels like reading in a quiet room. That’s exactly what we hoped for.",
-    user: "Sibhi Balamurugan, Privacy & Security Engineer"
+    user: "Sibhi .B, Privacy & Security Engineer"
   },
   {
     content: "We didn’t want to build just another browser. We wanted to build less — so you could do more.",
