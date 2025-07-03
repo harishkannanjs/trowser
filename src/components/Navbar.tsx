@@ -86,8 +86,8 @@ const Navbar = () => {
             <div className='h-24 w-28 rounded-full'>
               <Image
                 src={'/Trowser_Logo.webp'}
-                height={100}
-                width={400}
+                height={24}
+                width={28}
                 alt='Logo'
                 className='h-40 w-40 object-cover'
               />
