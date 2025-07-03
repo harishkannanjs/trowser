@@ -10,28 +10,20 @@ type Review = {
 
 const reviews: Review[] = [
   {
-    content: "I switched to Miraweb after realizing how much of my family's data was being harvested. Now I can browse without feeling like someone's peeking over my shoulder. Finally, peace of mind!",
-    user: "Sarah K., Freelance Writer"
+    content: "Modern browsers feel like operating systems. Trowser feels like a tool — and that’s the point.",
+    user: "Morgan Wallen, Performance Lead"
   },
   {
-    content: "Ads were ruining my workflow—constant interruptions when researching samples. Miraweb blocks them all by default. It’s like someone finally hit mute on the internet.",
-    user: "Javier M., Music Producer"
+    content: "Our beta testers told us it feels like reading in a quiet room. That’s exactly what we hoped for.",
+    user: "Sibhi Balamurugan, Privacy & Security Engineer"
   },
   {
-    content: "Slow browsers + sketchy hotel Wi-Fi = nightmare. Miraweb loads pages instantly, even on weak connections. Now I can actually get work done from the beach.",
-    user: "Priya T., Digital Nomad"
+    content: "We didn’t want to build just another browser. We wanted to build less — so you could do more.",
+    user: "Krishna Prasath R., Lead Systems Architect"
   },
   {
-    content: "My MacBook used to die in 3 hours. Switched to Miraweb and now I survive back-to-back lectures without hunting for outlets. Lifesaver!  .",
-    user: "Marcus L., College Senior"
-  },
-  {
-    content: "I literally have 70+ tabs open right now, and my laptop isn’t screaming in protest. Miraweb handles my chaos like a champ. Where has this been all my life?",
-    user: "Nina R., Marketing Director"
-  },
-  {
-    content: "Most browsers feel like a cluttered toolbox. Miraweb is clean, intuitive, and just… pleasant. It’s the Apple of browsers—minimal but powerful.",
-    user: "Oliver W., UI/UX Designer"
+    content: "Trowser is designed like an instrument, not a product — simple, precise, and ready to get out of your way.",
+    user: "Harish Kannan J.S., UX Engineer"
   },
 ]
 
@@ -61,8 +53,8 @@ const Reviews = () => {
   return (
     <section id='testimonials'className='md:mt-44 md:mb-24 my-16 md:mx-20 mx-8 flex flex-col md:flex-row md:gap-24 gap-8'>
       <div className='text-nowrap'>
-        <h1 className='md:text-6xl text-3xl font-sans font-semibold tracking-tight text-wrap max-md:text-center max-w-sm'>Hear from our Users</h1>
-        <p className='my-4 text-gray-300 text-wrap max-md:text-center'>See how Miraweb is changing the way people browse the web.</p>
+        <h1 className='md:text-6xl text-3xl font-sans font-semibold tracking-tight text-wrap max-md:text-center max-w-sm'>Hear from Our Developers</h1>
+        <p className='my-4 text-gray-300 text-wrap max-md:text-center'>The future of browsing, built by those who dream beyond the tab.</p>
         <div className='hidden md:flex gap-4 ml-4 mt-8'>
           <div onClick={decOffset} className='border-white/[0.2] rounded-lg p-1 border cursor-pointer'><ChevronLeft /></div>
           <div onClick={incOffset} className='border-white/[0.2] rounded-lg p-1 border cursor-pointer'><ChevronRight /></div>
@@ -77,7 +69,7 @@ const Reviews = () => {
           }
         </div>
         <div className="absolute inset-0 bg-gradient-to-r from-60% to-100% from-transparent to-black/80" />
-        <p className='text-muted-foreground text-sm mt-8'>* These testimonials are based on intended use. Real user feedback coming soon!</p>
+        <p className='text-muted-foreground text-sm mt-8'>*These early insights come straight from the creators behind Trowser. User reviews will be published following the public launch.</p>
         <div className='md:hidden flex justify-center gap-4 mt-12 relative z-50'>
           <div onClick={decOffset} className='border-white/[0.2] rounded-lg p-2 border flex justify-center items-center'><ChevronLeft size={28} /></div>
           <div onClick={incOffset} className='border-white/[0.2] rounded-lg p-2 border flex justify-center items-center'><ChevronRight size={28} /></div>
