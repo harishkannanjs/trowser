@@ -83,7 +83,7 @@ function Footer() {
         </div>
       </div>
       <div className='flex flex-col-reverse md:flex-row items-center md:justify-between md:mx-8 mt-8 md:mt-36'>
-        <p className='text-nowrap'>Copyright &copy; {new Date().getFullYear()} Miraweb. All rights are reserved.</p>
+        <p className='text-nowrap'>Copyright &copy; {new Date().getFullYear()} Trowser. All rights are reserved.</p>
         <SocialIcons iconSize='28' />
       </div>
     </footer>
