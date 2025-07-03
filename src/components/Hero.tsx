@@ -42,9 +42,9 @@ function Hero() {
       className='mt-16 flex flex-col items-center justify-center gap-4 md:h-[50rem]'
     >
       <motion.h2 variants={childVariant} className="bg-clip-text text-transparent text-center bg-gradient-to-b from-neutral-600 to-white text-4xl md:text-7xl font-sans relative z-20 font-bold tracking-tight">
-        Fast. Secure. Light. <br /> No spies, just wise.
+        Browse Beyond.<br /> Faster. Smarter. Simpler.
       </motion.h2>
-      <motion.p variants={childVariant} className='text-neutral-300 text-center mx-4'>The browser that vanishes trackers, thinks with AI, and molds to your style — all while sipping battery. Reclaim your web.</motion.p>
+      <motion.p variants={childVariant} className='text-neutral-300 text-center mx-4'>The next-generation browser engineered for speed, privacy, and precision — without the clutter.</motion.p>
 
       <motion.div variants={childVariant} className='md:mt-16 mt-8 relative flex justify-center items-center'>
         <div className='overflow-hidden border-2 border-white rounded-lg'>
