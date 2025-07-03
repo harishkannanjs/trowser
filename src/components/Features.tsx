@@ -4,7 +4,7 @@ import { BentoGrid, BentoGridItem } from './ui/bento-grid'
 const items = [
   {
     title: 'Privacy by Default',
-    description: 'No trackers. No compromise. Zero-trace mode always on.',
+    description: 'Auto-destroy ads/trackers, encrypted DNS, and zero data logging. You are digitally invisible.',
     className: 'md:col-span-2'
   },
   {
@@ -20,7 +20,7 @@ const items = [
   },
   {
     title: 'Featherlight Build',
-    description: 'Fast, efficient, and gentle on your system.', 
+    description: 'Loads pages in 1.2s, uses 50% less RAM, runs smooth on decade-old hardware.', 
     className: 'md:col-span-2',
     upcoming: true
   }
