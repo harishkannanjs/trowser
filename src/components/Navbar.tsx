@@ -85,7 +85,7 @@ const Navbar = () => {
           <div className='flex items-center'>
            <div className='h-24 w-24 rounded-full'>
               <Image
-                src={'/Trowser_logo.webp'}
+                src={'/Trowser_Logo.webp'}
                 height={96}
                 width={96}
                 alt='Logo'
