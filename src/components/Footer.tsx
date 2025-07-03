@@ -54,6 +54,7 @@ function Footer() {
               alt='Logo'
             />
           </div>
+          <span>The tab is not the task. Trowser knows the difference.</span>
         </div>
         <div className='mt-8 md:mt-12 mx-12 flex justify-center gap-24'>
           <ul>
