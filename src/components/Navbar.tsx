@@ -83,13 +83,13 @@ const Navbar = () => {
       >
         <div className='flex items-center gap-16 text-neutral-400'>
           <div className='flex items-center'>
-            <div className='h-24 w-28 rounded-full'>
+            <div className='h-24 w-24 rounded-full'>
               <Image
                 src={'/Trowser_Logo.webp'}
                 height={24}
-                width={28}
+                width={24}
                 alt='Logo'
-                className='h-40 w-40 object-cover'
+                className='h-24 w-24 object-cover'
               />
             </div>
           </div>
