@@ -22,8 +22,8 @@ const navLinks = [
     href: '/#testimonials'
   },
   {
-    name: 'Download',
-    href: '/#download'
+    name: 'Get Started',
+    href: '/#getstarted'
   }
 ]
 
