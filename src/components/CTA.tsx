@@ -7,7 +7,7 @@ function CTA() {
   return (
     <section id='getstarted' className='relative flex justify-center items-center h-80 md:my-8'>
       <div className='flex flex-col justify-center items-center'>
-        <h2 className='md:text-6xl text-3xl font-sans font-semibold tracking-tight text-center md:text-nowrap my-4'>Be First to Experience Trowser</h2>
+        <h2 className='md:text-6xl text-3xl font-sans font-semibold tracking-tight text-center md:text-nowrap my-4'>The tab is not the task. <br>Trowser knows the difference.</h2>
         <Link href={'#'} className='my-4'>
           <AnimatedButton />
         </Link>
