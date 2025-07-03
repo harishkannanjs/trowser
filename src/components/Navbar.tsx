@@ -114,7 +114,7 @@ const Navbar = () => {
             </div>
           )
         }
-        <Link href={'/#'} className='hidden md:block'>
+        <Link href={'https://tally.so/r/w4Yber'} className='hidden md:block'>
           <Button variant={'outline'}>
             Join Waitlist →
           </Button>
