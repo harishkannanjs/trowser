@@ -89,7 +89,7 @@ const Navbar = () => {
                 height={96}
                 width={96}
                 alt='Logo'
-                className='h-full w-full object-cover'
+                className='h-330 px w-1581 px object-cover'
               />
             </div>
           </div>
