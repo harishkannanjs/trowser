@@ -48,7 +48,7 @@ function Footer() {
         <div>
           <div className='flex items-center'>
             <Image
-              src={'/logo1.webp'}
+              src={'/Trowser_Logo.webp'}
               height={200}
               width={200}
               alt='Logo'
