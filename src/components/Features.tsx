@@ -3,24 +3,24 @@ import { BentoGrid, BentoGridItem } from './ui/bento-grid'
 
 const items = [
   {
-    title: 'Invisible Shield™',
-    description: 'Auto-destroy ads/trackers, encrypted DNS, and zero data logging. You are digitally invisible.',
+    title: 'Privacy by Default',
+    description: 'No trackers. No compromise. Zero-trace mode always on.',
     className: 'md:col-span-2'
   },
   {
-    title: 'Feather Engine®',
-    description: 'Loads pages in 1.2s, uses 50% less RAM, runs smooth on decade-old hardware.', 
+    title: 'Smart Tab Navigation',
+    description: 'Intuitive AI declutters your workspace, automatically.', 
     className: 'md:col-span-1',
     upcoming: true
   },
   {
-    title: 'AI Co-Pilot',
-    description: 'Log and categorize expenses with amount, date, and notes to monitor and analyze your spending habits.', 
+    title: 'Minimal Interface',
+    description: 'Designed to disappear, so you can focus on what matters.', 
     className: 'md:col-span-1'
   },
   {
-    title: 'Smart Income & Expense Analytics',
-    description: 'Monitor, analyze and optimize your income and expense with real-time data.', 
+    title: 'Featherlight Build',
+    description: 'Fast, efficient, and gentle on your system.', 
     className: 'md:col-span-2',
     upcoming: true
   }
