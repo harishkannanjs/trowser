@@ -58,7 +58,6 @@ function Footer() {
         </div>
         <div className='mt-8 md:mt-12 mx-12 flex justify-center gap-24'>
           <ul>
-            <h1 className='text-xl font-semibold my-6'>Quick Links</h1>
             {
               footerLinks1.map((l, i) => (
                 <li key={i} className='my-2 w-max rounded-full'>
@@ -70,7 +69,6 @@ function Footer() {
           </ul>
 
           <ul>
-            <h1 className='text-xl font-semibold my-6'>Support & Resources</h1>
             {
               footerLinks2.map((l, i) => (
                 <li key={i} className='my-2 w-max rounded-full'>
