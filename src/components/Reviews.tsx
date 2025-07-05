@@ -90,7 +90,7 @@ const Reviews = () => {
       <>
         {quote.split(' ').map((word, index) => (
           <span key={index} className="word inline-block">{word}</span>
-        )).reduce((prev, curr, index) => (
+        )).reduce((prev, curr) => (
           <>{prev} {curr}</>
         ))}
       </>
