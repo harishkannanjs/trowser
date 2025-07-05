@@ -1,82 +1,228 @@
 'use client';
 
 import { ChevronLeft, ChevronRight } from 'lucide-react';
-import React, { useState } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 
-type Review = {
-  content: string,
-  user: string
+interface Testimonial {
+  quote: string;
+  name: string;
+  designation: string;
 }
 
-const reviews: Review[] = [
+const testimonials: Testimonial[] = [
   {
-    content: "Modern browsers feel like operating systems. Trowser feels like a tool — and that’s the point.",
-    user: "Morgan Wallen, Performance Lead"
+    quote: "Modern browsers feel like operating systems. Trowser feels like a tool — and that's the point.",
+    name: "Morgan Wallen",
+    designation: "Performance Lead"
   },
   {
-    content: "Our beta testers told us it feels like reading in a quiet room. That’s exactly what we hoped for.",
-    user: "Sibhi .B, Privacy & Security Engineer"
+    quote: "Our beta testers told us it feels like reading in a quiet room. That's exactly what we hoped for.",
+    name: "Sibhi .B",
+    designation: "Privacy & Security Engineer"
   },
   {
-    content: "We didn’t want to build just another browser. We wanted to build less — so you could do more.",
-    user: "Krishna Prasath .R, Lead Systems Architect"
+    quote: "We didn't want to build just another browser. We wanted to build less — so you could do more.",
+    name: "Krishna Prasath .R",
+    designation: "Lead Systems Architect"
   },
   {
-    content: "Trowser is designed like an instrument, not a product — simple, precise, and ready to get out of your way.",
-    user: "Harish Kannan .J.S, UX Engineer"
+    quote: "Trowser is designed like an instrument, not a product — simple, precise, and ready to get out of your way.",
+    name: "Harish Kannan .J.S",
+    designation: "UX Engineer"
   },
-]
-
-const ReviewCard = ({ review, idx }: { review: Review, idx: number }) => {
-  return (
-    <div key={idx} className='h-[23em] min-w-[14em] bg-neutral-950 rounded-lg border border-white/[0.2] p-8 flex flex-col gap-4 justify-center items-center'>
-      <p>{review.content}</p>
-      <p className='ml-auto text-right'>— {review.user}</p>
-    </div>
-  )
-}
+];
 
 const Reviews = () => {
-  const [offset, setOffset] = useState(0);
+  const [activeIndex, setActiveIndex] = useState<number>(0);
+  const [isAnimating, setIsAnimating] = useState<boolean>(false);
+  const quoteRef = useRef<HTMLParagraphElement>(null);
+  const autoplayRef = useRef<NodeJS.Timeout | null>(null);
 
-  const incOffset = () => setOffset(offset => {
-    if(offset > 8) return offset;
-    return offset+1
-  });
+  const animateWords = () => {
+    if (!quoteRef.current) return;
 
-  const decOffset = () => setOffset(offset => {
-    if(offset <= 0) return offset;
+    const words = quoteRef.current.querySelectorAll('.word');
+    words.forEach((word, index) => {
+      const wordElement = word as HTMLElement;
+      wordElement.style.opacity = '0';
+      wordElement.style.transform = 'translateY(10px)';
+      wordElement.style.filter = 'blur(10px)';
 
-    return offset-1
-  });
+      setTimeout(() => {
+        wordElement.style.transition = 'opacity 0.2s ease-in-out, transform 0.2s ease-in-out, filter 0.2s ease-in-out';
+        wordElement.style.opacity = '1';
+        wordElement.style.transform = 'translateY(0)';
+        wordElement.style.filter = 'blur(0)';
+      }, index * 20);
+    });
+  };
+
+  const updateTestimonial = (direction: number) => {
+    if (isAnimating) return;
+
+    setIsAnimating(true);
+    const newIndex = (activeIndex + direction + testimonials.length) % testimonials.length;
+    setActiveIndex(newIndex);
+
+    setTimeout(() => {
+      setIsAnimating(false);
+    }, 300);
+  };
+
+  const handleNext = () => {
+    updateTestimonial(1);
+    if (autoplayRef.current) {
+      clearInterval(autoplayRef.current);
+      autoplayRef.current = null;
+    }
+  };
+
+  const handlePrev = () => {
+    updateTestimonial(-1);
+    if (autoplayRef.current) {
+      clearInterval(autoplayRef.current);
+      autoplayRef.current = null;
+    }
+  };
+
+  const formatQuote = (quote: string): JSX.Element => {
+    return (
+      <>
+        {quote.split(' ').map((word, index) => (
+          <span key={index} className="word inline-block">{word}</span>
+        )).reduce((prev, curr, index) => (
+          <>{prev} {curr}</>
+        ))}
+      </>
+    );
+  };
+
+  useEffect(() => {
+    animateWords();
+  }, [activeIndex]);
+
+  useEffect(() => {
+    // Autoplay functionality
+    autoplayRef.current = setInterval(() => {
+      if (!isAnimating) {
+        setActiveIndex(prev => (prev + 1) % testimonials.length);
+      }
+    }, 5000);
+
+    return () => {
+      if (autoplayRef.current) {
+        clearInterval(autoplayRef.current);
+      }
+    };
+  }, [isAnimating]);
 
   return (
-    <section id='testimonials'className='md:mt-44 md:mb-24 my-16 md:mx-20 mx-8 flex flex-col md:flex-row md:gap-24 gap-8'>
-      <div className='text-nowrap'>
-        <h1 className='md:text-6xl text-3xl font-sans font-semibold tracking-tight text-wrap max-md:text-center max-w-sm'>Hear from Our Developers</h1>
-        <p className='my-4 text-gray-300 text-wrap max-md:text-center'>The future of browsing, built by those who dream beyond the tab.</p>
-        <div className='hidden md:flex gap-4 ml-4 mt-8'>
-          <div onClick={decOffset} className='border-white/[0.2] rounded-lg p-1 border cursor-pointer'><ChevronLeft /></div>
-          <div onClick={incOffset} className='border-white/[0.2] rounded-lg p-1 border cursor-pointer'><ChevronRight /></div>
-        </div>
+    <section id='testimonials' className='md:mt-44 md:mb-24 my-16 md:mx-20 mx-8 flex flex-col items-center'>
+      <div className='text-center mb-16'>
+        <h1 className='md:text-6xl text-3xl font-sans font-semibold tracking-tight text-white'>
+          Hear from Our Developers
+        </h1>
+        <p className='my-4 text-gray-300'>
+          The future of browsing, built by those who dream beyond the tab.
+        </p>
       </div>
-      <div className='md:w-[70vw] overflow-hidden relative'>
-        <div className='flex gap-8 transition-transform duration-300 ease-in-out' style={{ transform: `translateX(-${offset * 20}%)` }}>
-          {
-            reviews.map((r, i) => (
-              <ReviewCard review={r} key={i} idx={i} />
-            ))
-          }
-        </div>
-        <div className="absolute inset-0 bg-gradient-to-r from-60% to-100% from-transparent to-black/80" />
-        <p className='text-muted-foreground text-sm mt-8'>*These early insights come straight from the creators behind Trowser. User reviews will be published following the public launch.</p>
-        <div className='md:hidden flex justify-center gap-4 mt-12 relative z-50'>
-          <div onClick={decOffset} className='border-white/[0.2] rounded-lg p-2 border flex justify-center items-center'><ChevronLeft size={28} /></div>
-          <div onClick={incOffset} className='border-white/[0.2] rounded-lg p-2 border flex justify-center items-center'><ChevronRight size={28} /></div>
-        </div>
-      </div>
-    </section>
 
+      <div className='w-full max-w-4xl'>
+        {/* Glass Neon Testimonial Box */}
+        <div className='group relative'>
+          {/* Neon glow effect */}
+          <div className='absolute -inset-1 bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 rounded-2xl blur opacity-30 group-hover:opacity-60 transition duration-1000 group-hover:duration-200 animate-pulse'></div>
+
+          {/* Main glass box */}
+          <div className='relative bg-black/20 backdrop-blur-lg border border-white/10 rounded-2xl p-8 md:p-12 min-h-[400px] flex flex-col justify-center items-center text-center transition-all duration-500 hover:border-white/20 hover:bg-black/30'>
+
+            {/* Quote */}
+            <div className='mb-8'>
+              <p 
+                ref={quoteRef}
+                className='text-xl md:text-2xl text-white/90 leading-relaxed font-light max-w-3xl'
+              >
+                {formatQuote(testimonials[activeIndex].quote)}
+              </p>
+            </div>
+
+            {/* Author info */}
+            <div className='mb-8'>
+              <h3 className='text-xl md:text-2xl font-semibold text-white mb-2 transition-all duration-300'>
+                {testimonials[activeIndex].name}
+              </h3>
+              <p className='text-sm md:text-base text-gray-400'>
+                {testimonials[activeIndex].designation}
+              </p>
+            </div>
+
+            {/* Navigation buttons */}
+            <div className='flex gap-4'>
+              <button
+                onClick={handlePrev}
+                disabled={isAnimating}
+                className='group/btn relative w-12 h-12 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center cursor-pointer transition-all duration-300 hover:bg-white/20 hover:border-purple-400/50 hover:shadow-lg hover:shadow-purple-400/25 disabled:opacity-50 disabled:cursor-not-allowed'
+              >
+                <div className='absolute inset-0 rounded-full bg-gradient-to-r from-purple-400/20 to-purple-600/20 opacity-0 group-hover/btn:opacity-100 transition-opacity duration-300'></div>
+                <ChevronLeft className='w-5 h-5 text-white/80 group-hover/btn:text-white transition-colors duration-300 relative z-10' />
+              </button>
+
+              <button
+                onClick={handleNext}
+                disabled={isAnimating}
+                className='group/btn relative w-12 h-12 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center cursor-pointer transition-all duration-300 hover:bg-white/20 hover:border-purple-400/50 hover:shadow-lg hover:shadow-purple-400/25 disabled:opacity-50 disabled:cursor-not-allowed'
+              >
+                <div className='absolute inset-0 rounded-full bg-gradient-to-r from-purple-400/20 to-purple-600/20 opacity-0 group-hover/btn:opacity-100 transition-opacity duration-300'></div>
+                <ChevronRight className='w-5 h-5 text-white/80 group-hover/btn:text-white transition-colors duration-300 relative z-10' />
+              </button>
+            </div>
+
+            {/* Indicator dots */}
+            <div className='flex gap-2 mt-8'>
+              {testimonials.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => {
+                    if (!isAnimating) {
+                      setActiveIndex(index);
+                      if (autoplayRef.current) {
+                        clearInterval(autoplayRef.current);
+                        autoplayRef.current = null;
+                      }
+                    }
+                  }}
+                  disabled={isAnimating}
+                  className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                    index === activeIndex 
+                      ? 'bg-cyan-400 shadow-lg shadow-cyan-400/50' 
+                      : 'bg-white/30 hover:bg-white/50'
+                  }`}
+                />
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <p className='text-muted-foreground text-sm mt-8 text-center'>
+          *These early insights come straight from the creators behind Trowser. User reviews will be published following the public launch.
+        </p>
+      </div>
+
+      <style jsx>{`
+        .word {
+          transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out, filter 0.2s ease-in-out;
+        }
+
+        @keyframes float {
+          0%, 100% { transform: translateY(0px); }
+          50% { transform: translateY(-10px); }
+        }
+
+        .group:hover .animate-float {
+          animation: float 3s ease-in-out infinite;
+        }
+      `}</style>
+    </section>
   )
 }
 
