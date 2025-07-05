@@ -85,7 +85,7 @@ const Reviews = () => {
     }
   };
 
-  const formatQuote = (quote: string): JSX.Element => {
+  const formatQuote = (quote: string): React.JSX.Element => {
     return (
       <>
         {quote.split(' ').map((word, index) => (
