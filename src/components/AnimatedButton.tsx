@@ -1,16 +1,20 @@
-import React from 'react'
-import { Button } from './ui/button'
 
-function AnimatedButton() {
+import Link from 'next/link'
+import React from 'react'
+
+interface AnimatedButtonProps {
+  href: string
+  children: React.ReactNode
+}
+
+function AnimatedButton({ href, children }: AnimatedButtonProps) {
   return (
-    <Button className=' md:px-6 md:py-5 md:text-base rounded-md text-black text-center relative overflow-hidden group/modal-btn'>
-      <span className="group-hover/modal-btn:translate-x-40 text-center transition duration-500">
-        Join Waitlist →
-      </span>
-      <div className="-translate-x-40 group-hover/modal-btn:translate-x-0 flex items-center justify-center absolute inset-0 transition duration-500 text-white z-20 text-lg">
-        🚀
-      </div>
-    </Button>
+    <Link
+      href={href}
+      className="inline-flex items-center px-6 py-3 bg-purple-600 hover:bg-purple-700 text-white font-medium rounded-lg transition-all duration-200 hover:scale-105"
+    >
+      {children}
+    </Link>
   )
 }
 
