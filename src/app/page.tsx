@@ -1,20 +1,19 @@
-
 import CTA from "@/components/CTA";
-import FAQs from "@/components/FAQs";
 import Features from "@/components/Features";
 import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
 import Navbar from "@/components/Navbar";
+import Reviews from "@/components/Reviews";
 
 export default function Home() {
   return (
-    <main className="min-h-screen">
+    <div>
       <Navbar />
       <Hero />
       <Features />
-      <FAQs />
-      <CTA />
+      <Reviews />
+      <CTA /> 
       <Footer />
-    </main>
+    </div>
   );
 }

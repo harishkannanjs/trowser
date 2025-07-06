@@ -1,24 +1,10 @@
-
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+import { Toaster } from "@/components/ui/sonner";
 
 export const metadata: Metadata = {
-  title: "Miraweb",
-  description: "Rewriting the Rules of Browsing",
-  icons: {
-    icon: "/logo2.webp",
-  },
+  title: "Trowser",
+  description: "The next-generation browser engineered for speed, privacy, and precision — without the clutter.",
 };
 
 export default function RootLayout({
@@ -29,9 +15,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className="antialiased bg-black text-white font-sans"
       >
-        {children}
+          {children}
+          <Toaster />
       </body>
     </html>
   );

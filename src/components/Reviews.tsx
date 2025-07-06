@@ -17,17 +17,17 @@ const testimonials: Testimonial[] = [
   },
   {
     quote: "Our beta testers told us it feels like reading in a quiet room. That's exactly what we hoped for.",
-    name: "Sibhi .B",
+    name: "Sibhi Balamurugan",
     designation: "Privacy & Security Engineer"
   },
   {
     quote: "We didn't want to build just another browser. We wanted to build less — so you could do more.",
-    name: "Krishna Prasath .R",
+    name: "Krishna Prasath R",
     designation: "Lead Systems Architect"
   },
   {
     quote: "Trowser is designed like an instrument, not a product — simple, precise, and ready to get out of your way.",
-    name: "Harish Kannan .J.S",
+    name: "Harish Kannan J.S.",
     designation: "UX Engineer"
   },
 ];
@@ -42,18 +42,26 @@ const Reviews = () => {
     if (!quoteRef.current) return;
 
     const words = quoteRef.current.querySelectorAll('.word');
+    
+    // Reset all words to initial state
+    words.forEach((word) => {
+      const wordElement = word as HTMLElement;
+      wordElement.style.transition = 'none';
+      wordElement.style.opacity = '0';
+      wordElement.style.transform = 'translateY(20px)';
+      wordElement.style.filter = 'blur(8px)';
+    });
+
+    // Animate words in sequence
     words.forEach((word, index) => {
       const wordElement = word as HTMLElement;
-      wordElement.style.opacity = '0';
-      wordElement.style.transform = 'translateY(10px)';
-      wordElement.style.filter = 'blur(10px)';
-
+      
       setTimeout(() => {
-        wordElement.style.transition = 'opacity 0.2s ease-in-out, transform 0.2s ease-in-out, filter 0.2s ease-in-out';
+        wordElement.style.transition = 'opacity 0.4s ease-out, transform 0.4s ease-out, filter 0.4s ease-out';
         wordElement.style.opacity = '1';
         wordElement.style.transform = 'translateY(0)';
         wordElement.style.filter = 'blur(0)';
-      }, index * 20);
+      }, index * 30 + 100); // Added delay to ensure content change happens first
     });
   };
 
@@ -89,16 +97,19 @@ const Reviews = () => {
     return (
       <>
         {quote.split(' ').map((word, index) => (
-          <span key={index} className="word inline-block">{word}</span>
-        )).reduce((prev, curr) => (
-          <>{prev} {curr}</>
+          <span key={`${activeIndex}-${index}`} className="word inline-block mr-1">{word}</span>
         ))}
       </>
     );
   };
 
   useEffect(() => {
-    animateWords();
+    // Small delay to ensure DOM has updated with new content
+    const timer = setTimeout(() => {
+      animateWords();
+    }, 50);
+
+    return () => clearTimeout(timer);
   }, [activeIndex]);
 
   useEffect(() => {
@@ -130,11 +141,11 @@ const Reviews = () => {
       <div className='w-full max-w-4xl'>
         {/* Glass Neon Testimonial Box */}
         <div className='group relative'>
-          {/* Neon glow effect */}
-          <div className='absolute -inset-1 bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 rounded-2xl blur opacity-30 group-hover:opacity-60 transition duration-1000 group-hover:duration-200 animate-pulse'></div>
+          {/* Glossy glow effect */}
+          <div className='absolute -inset-1 bg-white/10 rounded-2xl blur opacity-20 group-hover:opacity-30 transition duration-1000 group-hover:duration-200'></div>
 
           {/* Main glass box */}
-          <div className='relative bg-black/20 backdrop-blur-lg border border-white/10 rounded-2xl p-8 md:p-12 min-h-[400px] flex flex-col justify-center items-center text-center transition-all duration-500 hover:border-white/20 hover:bg-black/30'>
+          <div className='relative bg-white/5 backdrop-blur-xl border border-white/20 rounded-2xl p-8 md:p-12 min-h-[400px] flex flex-col justify-center items-center text-center transition-all duration-500 hover:border-white/30 hover:bg-white/10 shadow-2xl shadow-white/5'>
 
             {/* Quote */}
             <div className='mb-8'>
@@ -208,20 +219,7 @@ const Reviews = () => {
         </p>
       </div>
 
-      <style jsx>{`
-        .word {
-          transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out, filter 0.2s ease-in-out;
-        }
-
-        @keyframes float {
-          0%, 100% { transform: translateY(0px); }
-          50% { transform: translateY(-10px); }
-        }
-
-        .group:hover .animate-float {
-          animation: float 3s ease-in-out infinite;
-        }
-      `}</style>
+      
     </section>
   )
 }
