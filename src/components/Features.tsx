@@ -54,10 +54,6 @@ const Features: React.FC = () => {
     setActiveFeature(featureId);
   };
 
-  const handleTileLeave = () => {
-    setActiveFeature(null);
-  };
-
   return (
     <section id='features' className="mt-8 mb-6 md:mt-16 md:mb-8 md:mx-20 mx-8 flex flex-col items-center">
       <div className="relative w-full h-screen flex items-center justify-center px-4 md:px-8">
