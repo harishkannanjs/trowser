@@ -128,19 +128,19 @@ const Reviews = () => {
   }, [isAnimating]);
 
   return (
-    <section id='testimonials' className='md:mt-44 md:mb-24 my-16 md:mx-20 mx-8 flex flex-col items-center'>
-      <div className='text-center mb-16'>
+    <section id='testimonials' className='mt-4 mb-4 md:mt-6 md:mb-6 md:mx-6 mx-4 flex flex-col items-center'>
+      <div className='text-center mb-6 md:mb-8'>
         <h1 className='md:text-6xl text-3xl font-sans font-semibold tracking-tight text-white'>
           Hear from Our Developers
         </h1>
-        <p className='my-4 text-gray-300'>
+        <p className='mt-3 mb-2 md:my-4 text-gray-300'>
           The future of browsing, built by those who dream beyond the tab.
         </p>
       </div>
 
       <div className='w-full max-w-4xl'>
         {/* Glass Neon Testimonial Box */}
-        <div className='group relative'>
+        <div className='group relative will-change-transform' style={{ animation: 'tileFloat 4s ease-in-out infinite' }}>
           {/* Glossy glow effect */}
           <div className='absolute -inset-1 bg-white/10 rounded-2xl blur opacity-20 group-hover:opacity-30 transition duration-1000 group-hover:duration-200'></div>
 

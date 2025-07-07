@@ -54,7 +54,7 @@ function Footer() {
               alt='Logo'
             />
           </div>
-        <h2 className='top-10 -mt-8 md:ml-8 text-balance md:max-w-lg max-md:text-center'>The next-generation browser engineered for speed, privacy, and precision — without the clutter.</h2>
+        <h2 className='top-10 -mt-1 md:ml-8 text-balance md:max-w-lg max-md:text-center'>The next-generation browser engineered for speed, privacy, and precision — without the clutter.</h2>
         </div>
         <div className='mt-8 md:mt-12 mx-12 flex justify-center gap-24'>
           <ul>
