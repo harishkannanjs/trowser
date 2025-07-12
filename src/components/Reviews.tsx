@@ -1,3 +1,4 @@
+
 'use client';
 
 import { ChevronLeft, ChevronRight } from 'lucide-react';
@@ -129,46 +130,24 @@ const Reviews = () => {
 
   return (
     <section id='testimonials' className='mt-4 mb-4 md:mt-6 md:mb-6 md:mx-6 mx-4 flex flex-col items-center'>
-      <div className='text-center mb-6 md:mb-8'>
-        <h1 className='md:text-6xl text-3xl font-sans font-semibold tracking-tight text-white'>
-          Hear from Our Developers
-        </h1>
-        <p className='mt-3 mb-2 md:my-4 text-gray-300'>
-          The future of browsing, built by those who dream beyond the tab.
-        </p>
-      </div>
-
-      <div className='w-full max-w-4xl'>
-        {/* Glass Neon Testimonial Box */}
-        <div className='group relative will-change-transform' style={{ animation: 'tileFloat 4s ease-in-out infinite' }}>
-          {/* Glossy glow effect */}
-          <div className='absolute -inset-1 bg-white/10 rounded-2xl blur opacity-20 group-hover:opacity-30 transition duration-1000 group-hover:duration-200'></div>
-
-          {/* Main glass box */}
-          <div className='relative bg-white/5 backdrop-blur-xl border border-white/20 rounded-2xl p-8 md:p-12 min-h-[400px] flex flex-col justify-center items-center text-center transition-all duration-500 hover:border-white/30 hover:bg-white/10 shadow-2xl shadow-white/5'>
-
-            {/* Quote */}
-            <div className='mb-8'>
-              <p 
-                ref={quoteRef}
-                className='text-xl md:text-2xl text-white/90 leading-relaxed font-light max-w-3xl'
-              >
-                {formatQuote(testimonials[activeIndex].quote)}
-              </p>
-            </div>
-
-            {/* Author info */}
-            <div className='mb-8'>
-              <h3 className='text-xl md:text-2xl font-semibold text-white mb-2 transition-all duration-300'>
-                {testimonials[activeIndex].name}
-              </h3>
-              <p className='text-sm md:text-base text-gray-400'>
-                {testimonials[activeIndex].designation}
+      {/* Main Split Layout Container */}
+      <div className='w-full max-w-7xl mx-auto'>
+        <div className='grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center min-h-[600px]'>
+          
+          {/* Left Side - Title, Description, Navigation & Dots */}
+          <div className='flex flex-col justify-center space-y-8'>
+            {/* Title and Description */}
+            <div className='text-left'>
+              <h1 className='md:text-6xl text-3xl font-sans font-semibold tracking-tight text-white mb-4'>
+                Hear from Our Developers
+              </h1>
+              <p className='text-gray-300 text-lg leading-relaxed'>
+                The future of browsing, built by those who dream beyond the tab.
               </p>
             </div>
 
             {/* Navigation buttons */}
-            <div className='flex gap-4'>
+            <div className='flex gap-4 justify-start'>
               <button
                 onClick={handlePrev}
                 disabled={isAnimating}
@@ -189,7 +168,7 @@ const Reviews = () => {
             </div>
 
             {/* Indicator dots */}
-            <div className='flex gap-2 mt-8'>
+            <div className='flex gap-2 justify-start'>
               {testimonials.map((_, index) => (
                 <button
                   key={index}
@@ -212,14 +191,50 @@ const Reviews = () => {
               ))}
             </div>
           </div>
+
+          {/* Right Side - Content Box Only */}
+          <div className='flex items-center justify-center'>
+            <div className='w-full max-w-lg'>
+              {/* Glass Neon Testimonial Box */}
+              <div className='group relative will-change-transform' style={{ animation: 'tileFloat 4s ease-in-out infinite' }}>
+                {/* Glossy glow effect */}
+                <div className='absolute -inset-1 bg-white/10 rounded-2xl blur opacity-20 group-hover:opacity-30 transition duration-1000 group-hover:duration-200'></div>
+
+                {/* Main glass box */}
+                <div className='relative bg-white/5 backdrop-blur-xl border border-white/20 rounded-2xl p-6 md:p-8 min-h-[380px] flex flex-col justify-center items-center text-center transition-all duration-500 hover:border-white/30 hover:bg-white/10 shadow-2xl shadow-white/5'>
+
+                  {/* Quote */}
+                  <div className='mb-6'>
+                    <p 
+                      ref={quoteRef}
+                      className='text-lg md:text-xl text-white/90 leading-relaxed font-normal'
+                    >
+                      {formatQuote(testimonials[activeIndex].quote)}
+                    </p>
+                  </div>
+
+                  {/* Author info */}
+                  <div className='mb-6'>
+                    <h3 className='text-lg md:text-xl font-medium text-white mb-2 transition-all duration-300'>
+                      {testimonials[activeIndex].name}
+                    </h3>
+                    <p className='text-sm md:text-base text-gray-400 font-normal'>
+                      {testimonials[activeIndex].designation}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
 
-        <p className='text-muted-foreground text-sm mt-8 text-center'>
-          *These early insights come straight from the creators behind Trowser. User reviews will be published following the public launch.
-        </p>
+        {/* Bottom disclaimer text */}
+        <div className='mt-8 text-center'>
+          <p className='text-muted-foreground text-sm'>
+            *These early insights come straight from the creators behind Trowser. User reviews will be published following the public launch.
+          </p>
+        </div>
       </div>
-
-      
     </section>
   )
 }

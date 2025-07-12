@@ -165,3 +165,16 @@ html {
 .will-change-auto {
   will-change: auto;
 }
+
+/* Flip card utilities */
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+}

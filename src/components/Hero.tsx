@@ -39,7 +39,7 @@ function Hero() {
       variants={parentVariant}
       initial={'initial'}
       animate={'appear'}
-      className='mt-30 md:mt-34 flex flex-col items-center justify-center gap-4 md:h-[35rem]'
+      className='mt-30 md:mt-34 mb-12 md:mb-20 flex flex-col items-center justify-center gap-4 md:h-[35rem]'
     >
       <motion.h2 variants={childVariant} className="bg-clip-text text-transparent text-center bg-gradient-to-b from-neutral-600 to-white text-4xl md:text-7xl font-sans relative z-20 font-bold tracking-tight">
         Browse Beyond.<br /> Faster. Smarter. Simpler.
