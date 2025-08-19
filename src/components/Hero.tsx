@@ -1,11 +1,11 @@
 'use client'
 
-import { useIsMobile } from '@/hooks/use-mobile'
+
 import React from 'react'
 import { motion } from 'motion/react'
 
 function Hero() {
-  const isMobile = useIsMobile();
+  
 
   const parentVariant = {
     appear: {
