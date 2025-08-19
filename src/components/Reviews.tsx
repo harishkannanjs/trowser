@@ -46,18 +46,18 @@ const Reviews = () => {
   ];
 
   return (
-    <section className="py-20 bg-black">
+    <section className="py-8 bg-black">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-8">
-          <h2 className="bg-clip-text text-transparent text-center bg-gradient-to-b from-neutral-600 to-white text-4xl md:text-7xl font-sans relative z-20 font-bold tracking-tight mt-8 mb-4">
+        <div className="text-center mb-4">
+          <h2 className="bg-clip-text text-transparent text-center bg-gradient-to-b from-neutral-600 to-white text-4xl md:text-7xl font-sans relative z-20 font-bold tracking-tight mt-10 mb-2">
             Hear from Our Developers
           </h2>
-          <p className="text-xl text-gray-400 max-w-2xl mx-auto mt-8mb-6">
+          <p className="text-xl text-gray-400 max-w-2xl mx-auto  mb-1">
             The future of browsing, built by those who dream beyond the tab.
           </p>
         </div>
 
-        <div className="max-w-6xl mx-auto mt-1 mb-6">
+        <div className="max-w-6xl mx-auto mt-1 mb-2">
           <Carousel3D cards={developerCards} autoRotate={true} />
         </div>
 
