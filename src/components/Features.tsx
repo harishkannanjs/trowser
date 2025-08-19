@@ -37,8 +37,7 @@ const Features = () => {
       id: 'privacy',
       smallIcon: <Shield className="w-16 h-16 md:w-20 md:h-20 text-white" />,
       title: 'Privacy by Default',
-      description:
-        'Auto-destroy ads/trackers, encrypted DNS, and zero data logging. You are digitally invisible with always-on zero-trace mode and automatic tracker blocking.',
+      description: 'Auto-destroy ads/trackers, encrypted DNS, and zero data logging. You are digitally invisible with always-on zero-trace mode and automatic tracker blocking.',
       largeIcon: <Shield className="w-96 h-96 md:w-[600px] md:h-[600px] text-white" />,
       contentPosition: 'left',
       titleGradient: gradientSecondary,
@@ -96,7 +95,7 @@ const Features = () => {
             '"SF Pro Rounded Semibold", "SF Pro Rounded Semibold Placeholder", "-apple-system", "BlinkMacSystemFont", sans-serif',
         }}
       >
-        
+
 
         {/* Main Container Box */}
         <div
@@ -157,7 +156,11 @@ const Features = () => {
               >
                 {section.title}
               </h2>
-              <p className="text-base md:text-lg text-gray-300 leading-relaxed max-w-lg">
+              <p className={`text-xs sm:text-xs md:text-sm lg:text-base text-gray-300 leading-tight sm:leading-tight md:leading-snug lg:leading-normal ${
+                section.id === 'privacy' 
+                  ? 'max-w-[220px] sm:max-w-[240px] md:max-w-[280px] lg:max-w-[320px]' 
+                  : 'max-w-[240px] sm:max-w-[260px] md:max-w-[300px] lg:max-w-[340px]'
+              }`}>
                 {section.description}
               </p>
             </div>
