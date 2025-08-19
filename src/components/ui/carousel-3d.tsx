@@ -130,7 +130,7 @@ const Carousel3D: React.FC<Carousel3DProps> = ({
   return (
     <div 
       className={`relative w-full flex flex-col items-center justify-center ${
-        isMobile ? 'h-[500px]' : 'h-[600px]'
+        isMobile ? 'h-[500px]' : 'h-[500px]'
       }`}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
