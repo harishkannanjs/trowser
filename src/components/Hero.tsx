@@ -50,7 +50,7 @@ function Hero() {
           
           <div className="absolute inset-0 bg-gradient-to-b from-10% to-90% from-transparent to-black/80" />
         </div>
-        <div className='bg-purple-500/50 h-[13rem] md:h-[33rem] md:w-[63rem] w-full absolute -z-1 blur-2xl' />
+        <div className=' h-[13rem] md:h-[33rem] md:w-[63rem] w-full absolute -z-1 blur-2xl' />
       </motion.div>
       <div className='w-full h-20 -mt-16 blur-xl relative -z-10 ' />
     </motion.div>
