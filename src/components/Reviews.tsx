@@ -46,7 +46,7 @@ const Reviews = () => {
   ];
 
   return (
-    <section className="py-8 bg-black">
+    <section id="testimonials" className="py-8 bg-black">
       <div className="container mx-auto px-4">
         <div className="text-center mb-4">
           <h2 className="bg-clip-text text-transparent text-center bg-gradient-to-b from-neutral-600 to-white text-4xl md:text-7xl font-sans relative z-20 font-bold tracking-tight mt-10 mb-2">
